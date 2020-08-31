@@ -42,7 +42,7 @@ class SlitExp:
   def show_distribution(self):
     vals = []
     print(f'10000*prob Positions')
-    for key, val in sorted(self.dist.items(), key=lambda x: (sum(x[0]), sum(x[0][1:]), sum(x[0][2:]))):
+    for key, val in sorted(self.dist.items(), key=lambda x: (sum(x[0]), x[0][-1])):
       print(f'{10000*val/self.weight:10f} {key}')
       vals.append(val/self.weight)
     print(f'Paths:   {self.weight}')
